@@ -9,8 +9,8 @@ server.interceptors.request.use(config=>{
     return Promise.reject(error)
 });
 
-/**请求前的拦截 */
-server.interceptors.request.use(result=>{
+/**响应前的拦截 */
+server.interceptors.response.use(result=>{
     return result
 },error => {
     return Promise.reject(error)
