@@ -12,7 +12,7 @@ export default new Router({
 
     },
     {
-      path:'/homepage',
+      path:'/',
       name:'homepage',
       component:()=>import(/* webpackChunkName: "homepage" */ '@/components/homepage/HomePage.vue'),
       children:[
@@ -20,7 +20,16 @@ export default new Router({
           path: 'login',
           name: 'login',
           component:()=>import(/* webpackChunkName: "login" */ '@/views/login/Login.vue')
-
+        },
+        {
+          path: 'department',
+          name: 'department',
+          component:()=>import(/* webpackChunkName: "department" */ '@/views/department/Department.vue')
+        },
+        {
+          path: 'employees',
+          name: 'employees',
+          component:()=>import(/* webpackChunkName: "department" */ '@/views/employees/Employees.vue')
         },
       ]
     }

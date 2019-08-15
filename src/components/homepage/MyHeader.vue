@@ -1,13 +1,13 @@
 <template>
     <div class="header-wrapper">
-        <h3 class="header-title">后台管理系统</h3>
+        <h3 class="header-title">HHHH后台管理系统</h3>
         <i class="header-icon el-icon-s-unfold"></i>
         <el-dropdown class="header-info" trigger="click">
       <span class="el-dropdown-link">
         我的主页<i class="el-icon-arrow-down el-icon--right"></i>
       </span>
             <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item icon="el-icon-plus">个人设置</el-dropdown-item>
+                <el-dropdown-item icon="el-icon-plus"><span class="tou"></span>个人设置</el-dropdown-item>
                 <el-dropdown-item icon="el-icon-circle-plus">个人信息</el-dropdown-item>
                 <el-dropdown-item icon="el-icon-circle-plus-outline">注销</el-dropdown-item>
                 <el-dropdown-item icon="el-icon-check">双皮奶</el-dropdown-item>
@@ -47,6 +47,12 @@
         cursor: pointer;
         padding: 0 10px;
         float: right;
+        .tou{
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 1px solid #000;
+        }
     }
 }
 </style>
