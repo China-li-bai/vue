@@ -11,7 +11,7 @@
             </el-form-item>
 
             <el-form-item>
-                <el-button type="primary" @click="login()">提交</el-button>
+                <el-button type="primary" @click="loginFN">提交</el-button>
 
             </el-form-item>
         </el-form>
@@ -19,6 +19,10 @@
 </template>
 
 <script>
+    // import request from '@/request/request.js';
+    import {LoginApi} from '@/request/api';
+    import qs from 'qs';
+
     export default {
         name: "Login",
         data(){
@@ -41,7 +45,25 @@
             }
         },
         methods:{
-                login(){}
+                loginFN(){
+                    this.$refs['ruleForm'].validate(vali=>{
+                        if (vali){
+                            // request.post('/api/coding/tokens',qs.stringify({
+                            //     username:this.ruleForm.username,
+                            //     password:this.ruleForm.pass
+                            // }))
+                            console.log(LoginApi)
+                            LoginApi(qs.stringify({
+                                username:this.ruleForm.username,
+                                password:this.ruleForm.pass
+                            })).then(res => {
+
+                            })
+                        }else {
+                            return false
+                        }
+                    })
+                }
         }
     }
 </script>

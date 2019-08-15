@@ -1,6 +1,7 @@
 import axios from 'axios';
+
 /**请求超过5秒 */
-const  server = axios.create({timeout:3000});
+const  server = axios.create({timeout:5000});
 
 /**请求前的拦截 */
 server.interceptors.request.use(config=>{
@@ -9,10 +10,11 @@ server.interceptors.request.use(config=>{
     return Promise.reject(error)
 });
 
-/**请求前的拦截 */
-server.interceptors.request.use(result=>{
+/**响应前的拦截 */
+server.interceptors.response.use(result=>{
     return result
 },error => {
     return Promise.reject(error)
 
 });
+export default server
