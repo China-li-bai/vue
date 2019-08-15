@@ -1,6 +1,7 @@
 <template>
     <div>
         MyContent
+        <router-view></router-view>
     </div>
 </template>
 
